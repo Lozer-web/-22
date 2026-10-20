@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="старый бог/старый бог.vcxproj" />
+  <Project Path="старый бог/старый бог.vcxproj" Id="c0da7f1b-4643-4a56-8b7e-72d91cada5ea" />
 </Solution>
