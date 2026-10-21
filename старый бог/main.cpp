@@ -61,8 +61,8 @@
  
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 	srand(time(NULL));
 	/*std::string name = "Text";
 	std::string name1 = "Даник" + name;
@@ -72,7 +72,7 @@ int main()
 	{
 		std::cout << name[i];
 	}*/
-	std::cout << "Enter:";
+	/*	std::cout << "Enter:";
 	std::string a;
 	int b;
 
@@ -85,11 +85,13 @@ int main()
 
 	/*std::cin.ignore(32676, '\n');*/  // (очистка буфера     сколько_очистить, до_какого_символа_очищать)
 
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  //топовая очистка буфера         || ставиться в том случае если после гетлайна идет интовое значение син например "std::cin >> b;"
+	/*	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  //топовая очистка буфера         || ставиться в том случае если после гетлайна идет интовое значение син например "std::cin >> b;"
 
 
 	std::getline(std::cin, a, '\n');   //(откуда_инфа, куда_положить, от_какого_символа_читать)
-	std::cout << a << std::endl;
+	std::cout << a << std::endl;*/
+
+
 	/*std::cin >> b;
 	std::cout << b << "\n";
 
@@ -99,10 +101,51 @@ int main()
 	std::cin >> b;
 	std::cout << b << "\n";*/
 
+	std::cout << "Какая то программа :)\n\n\n";
 
 
 
-	//ОТЛАДКА!!!!
+	std::string login;
+	std::string passwrd;
+
+	std::cout << "\tРегистрация:\n";
+	while (true)
+	{
+		std::cout << "Введите логин: ";
+		std::getline(std::cin, login, '\n');
+		if (login.size() >= 5 || login.size() <= 15)
+		{
+			while (true)
+			{
+				std::cout << "Введите пароль: ";
+				std::getline(std::cin, passwrd, '\n');
+				if (passwrd.size() >= 5 || passwrd.size() <= 15)
+				{
+					std::cout << "Успешная регистрация!!!!";
+					Sleep(2000);
+					break;
+				}
+				else
+				{
+					std::cout << "Пароль должен содержать от 5 до 15 символов!";
+					Sleep(2000);
+					system("cls");
+				}
+			}
+			break;
+		}
+		
+		else
+		{
+			std::cout << "Логин должен содержать от 5 до 15 символов!";
+			Sleep(2000);
+			system("cls");
+		}
+	}
+
+	
+
+	//че то не так в коде, надо перепроверить его
 
 
 
@@ -127,11 +170,7 @@ int main()
 
 
 
-
-
-
-
-	return 0;
+return 0;
 }
 	/*	int side = 2, row = 4, col1 = 4, col2 = 3;
 	int*** ar = new int** [side];       //создание трёхмерного массива
