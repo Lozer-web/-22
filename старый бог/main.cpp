@@ -1,5 +1,8 @@
+#define NOMINMAX
 #include <iostream>
 #include <Windows.h>
+#include <string>
+#include <limits>
 	//void f00(int* num)               //|
 //								   //|
 //{
@@ -54,17 +57,82 @@
 }
 -------------------------------------------------------------
 */
-void Arrchi(int*& arr, int size)
-{
-	arr = new int[size];
-}
+
  
 int main()
 {
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	srand(time(NULL));
+	/*std::string name = "Text";
+	std::string name1 = "Даник" + name;
+	std::cout << name << "\n";
 
+	for (int i = 0; i < name.size(); i++)
+	{
+		std::cout << name[i];
+	}*/
+	std::cout << "Enter:";
+	std::string a;
+	int b;
+
+
+	std::getline(std::cin, a);   //(откуда_инфа, куда_положить)
+	std::cout << a << std::endl;
+
+	std::cin >> b;
+	std::cout << b << std::endl;
+
+	/*std::cin.ignore(32676, '\n');*/  // (очистка буфера     сколько_очистить, до_какого_символа_очищать)
+
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  //топовая очистка буфера         || ставиться в том случае если после гетлайна идет интовое значение син например "std::cin >> b;"
+
+
+	std::getline(std::cin, a, '\n');   //(откуда_инфа, куда_положить, от_какого_символа_читать)
+	std::cout << a << std::endl;
+	/*std::cin >> b;
+	std::cout << b << "\n";
+
+	std::cin >> a;
+	std::cout << a << "\n";
+
+	std::cin >> b;
+	std::cout << b << "\n";*/
+
+
+
+
+	//ОТЛАДКА!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	return 0;
+}
 	/*	int side = 2, row = 4, col1 = 4, col2 = 3;
 	int*** ar = new int** [side];       //создание трёхмерного массива
 	for (int i = 0; i < side; i++)
@@ -95,11 +163,6 @@ int main()
 		delete[] ar[i];
 	}
 	delete[] ar;*/
-
-
-
-
-
 
 
 	/*int size = 5;
@@ -165,37 +228,10 @@ int main()
 	//-------------------------------------------------------------
 
 
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//int one = 5, two = 10;
+
+
+
 
 	//std::cout << one << " " << two << "\n";// пишем как обычно
 	////std::swap(one, two);
@@ -204,13 +240,19 @@ int main()
 
 	//int a = 5;
 
+
+
 	//std::cout << a << "\n";		//|
 	//a = f01(a);				    //|
 	//std::cout << a << "\n";	   // <
 	//f00(&a);
 	//std::cout << a << "\n";
 
+
+
 	//int* ptr = &a; // хранит адрес переменной с помощью &(амперсанда)
+
+
 
 	//std::cout << a << "\n"; // переменная
 	////std::cout << &a << "\n";//адрес переменной
@@ -218,5 +260,3 @@ int main()
 	////std::cout << &ptr << "\n";//адрес получателя
 	//ptr = &b;
 	//std::cout << *ptr << "\n";//пишет значение переменной
-	return 0;
-}
